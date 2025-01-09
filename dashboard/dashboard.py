@@ -5,6 +5,8 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
+all_df = pd.read_csv("dashboard/main_data.csv")
+
 # Dapatkan directory path dari file dashboard.py
 current_dir = os.path.dirname(__file__)
 # Buat full path ke file CSV
