@@ -7,13 +7,6 @@ sns.set(style='dark')
 
 all_df = pd.read_csv("dashboard/main_data.csv")
 
-# Dapatkan directory path dari file dashboard.py
-current_dir = os.path.dirname(__file__)
-# Buat full path ke file CSV
-file_path = os.path.join(current_dir, "main_data.csv")
-# Baca file CSV
-all_df = pd.read_csv(file_path)
-
 all_df.sort_values(by="dteday", inplace=True)
 all_df.reset_index(inplace=True)
  
