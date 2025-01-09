@@ -5,7 +5,10 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
-all_df = pd.read_csv("main_data.csv")
+uploaded_file = st.file_uploader("Upload main_data.csv")
+if uploaded_file:
+    all_df = pd.read_csv(uploaded_file)
+    st.write(all_df.head())
 
 all_df.sort_values(by="dteday", inplace=True)
 all_df.reset_index(inplace=True)
